@@ -15,8 +15,21 @@ export default function App() {
         barStyle={Platform.OS === "ios" ? "light-content" : "light-content"}
       />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: true }}>
-          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: "#ef7676" },
+            headerTintColor: "white",
+            headerTitleAlign: "center",
+            contentStyle: { backgroundColor: "#86c249" },
+          }}
+        >
+          <Stack.Screen
+            name="MealsCategories"
+            component={CategoriesScreen}
+            options={{
+              title: "Bütün kateqoriyalar",
+            }}
+          />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
       </NavigationContainer>
