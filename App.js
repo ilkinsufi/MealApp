@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, StatusBar, SafeAreaView } from "react-native";
+import { Platform, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -18,7 +18,6 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            // headerStyle: { backgroundColor: "#351401" },
             headerStyle: { backgroundColor: "#3f2f25" },
             headerTintColor: "white",
             headerTitleAlign: "center",
@@ -30,16 +29,7 @@ export default function App() {
             component={CategoriesScreen}
             options={{ title: "All Cagegories" }}
           />
-          <Stack.Screen
-            name="MealsOverview"
-            component={MealsOverviewScreen}
-            // options={({ route, navigation }) => {
-            //   const catId = route.params.categoryId;
-            //   return {
-            //     title: catId,
-            //   };
-            // }}
-          />
+          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
           <Stack.Screen name="MealDetail" component={MetalDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
