@@ -1,18 +1,12 @@
 import { useLayoutEffect } from "react";
 
-import {
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  ScrollView,
-  Button,
-} from "react-native";
+import { Text, View, Image, StyleSheet, ScrollView } from "react-native";
 
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MetalDetail/Subtitle";
 import List from "../components/MetalDetail/List";
+import IconButton from "../components/IconButton";
 
 function MetalDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId;
@@ -26,7 +20,13 @@ function MetalDetailScreen({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Tap" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            icon="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);
